@@ -42,18 +42,18 @@ const Analytics = () => {
     <div className="min-h-screen bg-background">
       <Sidebar />
       
-      <main className="ml-64 transition-all duration-300">
-        <header className="bg-card border-b border-card-border p-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold text-card-foreground">Analitik</h1>
-              <p className="text-muted-foreground">Detaylı performans analizi ve istatistikler</p>
+      <main className="lg:ml-64 transition-all duration-300">
+        <header className="bg-card border-b border-card-border p-4 sm:p-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="ml-12 lg:ml-0">
+              <h1 className="text-xl sm:text-2xl font-bold text-card-foreground">Analitik</h1>
+              <p className="text-muted-foreground text-sm sm:text-base">Detaylı performans analizi ve istatistikler</p>
             </div>
           </div>
         </header>
 
-        <div className="p-6 space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             <MetricCard
               title="Sayfa Görüntüleme"
               value="24,567"
@@ -84,7 +84,7 @@ const Analytics = () => {
             />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
             <div className="xl:col-span-2">
               <DashboardLineChart 
                 data={trafficData}

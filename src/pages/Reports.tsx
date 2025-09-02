@@ -32,24 +32,25 @@ const Reports = () => {
     <div className="min-h-screen bg-background">
       <Sidebar />
       
-      <main className="ml-64 transition-all duration-300">
-        <header className="bg-card border-b border-card-border p-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold text-card-foreground">Raporlar</h1>
-              <p className="text-muted-foreground">Detaylı finansal raporlar ve analizler</p>
+      <main className="lg:ml-64 transition-all duration-300">
+        <header className="bg-card border-b border-card-border p-4 sm:p-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="ml-12 lg:ml-0">
+              <h1 className="text-xl sm:text-2xl font-bold text-card-foreground">Raporlar</h1>
+              <p className="text-muted-foreground text-sm sm:text-base">Detaylı finansal raporlar ve analizler</p>
             </div>
             <div className="flex items-center space-x-3">
-              <button className="flex items-center space-x-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors">
+              <button className="flex items-center space-x-2 px-3 sm:px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-sm">
                 <Download className="w-4 h-4" />
-                <span>Rapor İndir</span>
+                <span className="hidden sm:inline">Rapor İndir</span>
+                <span className="sm:hidden">İndir</span>
               </button>
             </div>
           </div>
         </header>
 
-        <div className="p-6 space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             <MetricCard
               title="Toplam Gelir"
               value="₺1,189,600"
@@ -80,7 +81,7 @@ const Reports = () => {
             />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
             <DashboardLineChart 
               data={revenueData}
               title="Aylık Gelir Analizi (₺)"
@@ -94,7 +95,7 @@ const Reports = () => {
             />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
             <div className="bg-card border border-card-border rounded-lg p-6 shadow-card">
               <h3 className="text-lg font-semibold text-card-foreground mb-4">Finansal Özet</h3>
               <div className="space-y-4">

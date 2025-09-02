@@ -43,19 +43,19 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Sidebar />
       
-      <main className="ml-64 transition-all duration-300">
+      <main className="lg:ml-64 transition-all duration-300">
         {/* Header */}
-        <header className="bg-card border-b border-card-border p-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold text-card-foreground">Dashboard</h1>
-              <p className="text-muted-foreground">E-ticaret yönetim paneline hoş geldiniz</p>
+        <header className="bg-card border-b border-card-border p-4 sm:p-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="ml-12 lg:ml-0">
+              <h1 className="text-xl sm:text-2xl font-bold text-card-foreground">Dashboard</h1>
+              <p className="text-muted-foreground text-sm sm:text-base">E-ticaret yönetim paneline hoş geldiniz</p>
             </div>
             
             <div className="flex items-center space-x-4">
               <div className="text-right">
-                <p className="text-sm text-muted-foreground">Son güncelleme</p>
-                <p className="text-sm font-medium text-card-foreground">
+                <p className="text-xs sm:text-sm text-muted-foreground">Son güncelleme</p>
+                <p className="text-xs sm:text-sm font-medium text-card-foreground">
                   {new Date().toLocaleDateString('tr-TR')}
                 </p>
               </div>
@@ -64,9 +64,9 @@ const Index = () => {
         </header>
 
         {/* Main Content */}
-        <div className="p-6 space-y-6">
+        <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
           {/* Metrics Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             <MetricCard
               title="Toplam Satış"
               value="₺124,350"
@@ -98,7 +98,7 @@ const Index = () => {
           </div>
 
           {/* Charts Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
             {/* Sales Line Chart */}
             <div className="xl:col-span-2">
               <DashboardLineChart 
