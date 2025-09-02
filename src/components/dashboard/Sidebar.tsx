@@ -12,22 +12,25 @@ import {
   User
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const menuItems = [
-  { icon: Home, label: "Dashboard", active: true },
-  { icon: ShoppingCart, label: "Siparişler" },
-  { icon: Package, label: "Ürünler" },
-  { icon: Users, label: "Müşteriler" },
-  { icon: BarChart3, label: "Analitik" },
-  { icon: TrendingUp, label: "Raporlar" },
-  { icon: DollarSign, label: "Finans" },
-  { icon: ShoppingBag, label: "Kampanyalar" },
-  { icon: User, label: "Profil" },
-  { icon: Settings, label: "Ayarlar" },
+  { icon: Home, label: "Dashboard", path: "/" },
+  { icon: ShoppingCart, label: "Siparişler", path: "/orders" },
+  { icon: Package, label: "Ürünler", path: "/products" },
+  { icon: Users, label: "Müşteriler", path: "/customers" },
+  { icon: BarChart3, label: "Analitik", path: "/analytics" },
+  { icon: TrendingUp, label: "Raporlar", path: "/reports" },
+  { icon: DollarSign, label: "Finans", path: "#" },
+  { icon: ShoppingBag, label: "Kampanyalar", path: "#" },
+  { icon: User, label: "Profil", path: "#" },
+  { icon: Settings, label: "Ayarlar", path: "#" },
 ];
 
 export const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   return (
     <div className={cn(
@@ -60,11 +63,13 @@ export const Sidebar = () => {
           {menuItems.map((item, index) => (
             <button
               key={index}
+              onClick={() => item.path !== "#" && navigate(item.path)}
               className={cn(
                 "w-full flex items-center space-x-3 px-3 py-2 rounded-lg transition-all duration-200",
-                item.active
+                location.pathname === item.path
                   ? "bg-primary text-primary-foreground shadow-primary"
-                  : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+                  : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground",
+                item.path === "#" && "opacity-50 cursor-not-allowed"
               )}
             >
               <item.icon className="w-5 h-5 flex-shrink-0" />
