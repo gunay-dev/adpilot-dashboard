@@ -42,7 +42,7 @@ export const Sidebar = () => {
               <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
                 <ShoppingCart className="w-5 h-5 text-primary-foreground" />
               </div>
-              <span className="font-bold text-sidebar-foreground">E-Commerce</span>
+              <span className="font-bold text-sidebar-foreground">AdPilot</span>
             </div>
           )}
           <button
@@ -83,8 +83,8 @@ export const Sidebar = () => {
                 <User className="w-5 h-5 text-primary-foreground" />
               </div>
               <div className="flex-1">
-                <p className="text-sm font-medium text-sidebar-foreground">Admin User</p>
-                <p className="text-xs text-sidebar-foreground/60">admin@ecommerce.com</p>
+                <p className="text-sm font-medium text-sidebar-foreground">Burak Günay</p>
+                <p className="text-xs text-sidebar-foreground/60">burak@ideasoft.com.tr</p>
               </div>
             </div>
           </div>
